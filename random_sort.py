@@ -1,20 +1,21 @@
-def random_sort(arr):
-    n = len(arr)
+""" Генерация списка случайных чисер и сортировка этого списка"""
+
+def random_sort(for_list):
+    n = len(for_list)
     # Проходим по всем элементам списка
     for i in range(n):
-        # Последние i элементов уже отсортированы, поэтому мы можем их пропустить
         for j in range(0, n-i-1):
             # Если текущий элемент больше следующего, меняем их местами
-            if arr[j] > arr[j+1]:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
+            if for_list[j] > for_list[j+1]:
+                for_list[j], for_list[j+1] = for_list[j+1], for_list[j]
 
 # Генерируем список из 10 случайных чисел
 import random
-random_numbers = random.sample(range(0, 100), 10)
+random_list = random.sample(range(0, 99), 7)
 
-# Выводим неотсортированный список
-print("Исходный список:", random_numbers)
+# До сортировки
+print("Cписок до сортировки:", random_list)
 
-# Сортируем список и выводим его
-random_sort(random_numbers)
-print("Отсортированный список:", random_numbers)
+# После сортировки
+random_sort(random_list)
+print("Список после сортировки:", random_list)
